@@ -1,7 +1,7 @@
 1.  桌面系统
 
-[CentOS6] GNOME 2.x
-[CentOS7] GNOME 3.x（GNOME Shell）
+-   [CentOS6] GNOME 2.x
+-   [CentOS7] GNOME 3.x（GNOME Shell）
 
 2.  文件系统
 [CentOS6] ext4
