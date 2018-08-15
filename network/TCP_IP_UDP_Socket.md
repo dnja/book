@@ -18,7 +18,7 @@ TCP/IP 是互联网相关的各类协议族的总称，比如：TCP，UDP，IP�
 
 ## 网络参考模型
 
-![参考模型][1]
+![参考模型](https://github.com/dnja/book/blob/master/resource/images/network/tcp_osi.jpg)
 
 - OSI 参考模型
 
@@ -108,7 +108,7 @@ TCP是因特网中的传输层协议，使用三次握手协议建立连接。�
 
 TCP三次握手的过程如下：
 
-![连接建立][2]
+![连接建立](https://github.com/dnja/book/blob/master/resource/images/network/tcp_start.jpg)
 
 1. 客户端发送 SYN（SEQ=x）报文给服务器端，进入 SYN_SEND 状态。
 2. 服务器端收到 SYN 报文，回应一个 SYN （SEQ=y）ACK(ACK=x+1）报文，进入 SYN_RECV 状态。
@@ -120,7 +120,7 @@ TCP三次握手的过程如下：
 
 建立一个连接需要三次握手，而终止一个连接要经过四次挥手，这是由TCP的半关闭（half-close）造成的。具体过程如下图所示。
 
-![连接终止][3]
+![连接终止](https://github.com/dnja/book/blob/master/resource/images/network/tcp_end.jpg)
 
 1. 某个应用进程首先调用 close，称该端执行“主动关闭”（active close）。该端的 TCP 于是发送一个 FIN 分节，表示数据发送完毕。
 2. 接收到这个 FIN 的对端执行 “被动关闭”（passive close），这个 FIN 由 TCP 确认。
@@ -171,7 +171,7 @@ IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的�
 
 ## TCP/IP 通讯示例
 
-![TCP/IP 通讯示例][4]
+![TCP/IP 通讯示例](https://github.com/dnja/book/blob/master/resource/images/network/tcp_transaction.jpg)
 
 在 TCP/IP 通讯过程中，每个分层，都会对所发送的数据附加一个首部，在这个首部中包含了该层必要的信息，如发送端的目标地址一节协议相关信息。通常，为协议提供的信息为包首部，所要发送的内容为数据。在下一层角度看，从上一层收到的包全部被认为是本层的数据。
 
@@ -217,5 +217,5 @@ IP 模块收到 IP 包首部以及后面的数据部分以后，也做类似的�
 
 接收端应用程序会直接接收发送端发送的数据。通过解析数据可以获知邮件的内容信息。
 
-![TCP/IP 数据包][5]
+![TCP/IP 数据包](https://github.com/dnja/book/blob/master/resource/images/network/tcp_data.jpg)
 
