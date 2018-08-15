@@ -1,3 +1,5 @@
+## 配置~/.vimrc快捷键
+***
 - 新起一行输入fmt.，然后ctrl+x, ctrl+o，Vim 会弹出补齐提示下拉框，不过并非实时跟随的那种补齐，这个补齐是由gocode提供的。
 – 输入一行代码：time.Sleep(time.Second)，执行:GoImports，Vim会自动导入time包。
 – 将光标移到Sleep函数上，执行:GoDef或命令模式下敲入gd，Vim会打开$GOROOT/src/time/sleep.go中 的Sleep函数的定义。执行:b 1返回到hellogolang.go。
@@ -15,7 +17,8 @@
 – 执行:GoImplements，显示当前类型实现的interface列表。
 – 执行:GoRename [to]，将当前光标下的符号替换为[to]。
 
-配置~/.vimrc快捷键
+## 配置~/.vimrc快捷键
+***
 $ vi ~/.vimrc
 " set mapleader
 let mapleader = ","
