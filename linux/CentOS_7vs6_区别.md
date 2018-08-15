@@ -43,135 +43,168 @@
       $ chronyc sources
 
 10.  修改时间
--   [CentOS6] 
+- [CentOS6] 
 
-    $ vim /etc/sysconfig/clock
-       ZONE="Asia/Tokyo"
-       UTC=fales
-    $ sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+       $ vim /etc/sysconfig/clock
+            ZONE="Asia/Tokyo"
+            UTC=fales
+       $ sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-[CentOS7]
+- [CentOS7]
 
-    $ timedatectl set-timezone Asia/Tokyo
-    $ timedatectl status
+      $ timedatectl set-timezone Asia/Tokyo
+      $ timedatectl status
 
 11.  修改地区
--   [CentOS6]
-    $ vim /etc/sysconfig/i18n
-       LANG="ja_JP.utf8"
-    $ /etc/sysconfig/i18n
-    $ locale
 
--   [CentOS7]
+- [CentOS6]
+
+      $ vim /etc/sysconfig/i18n
+            LANG="ja_JP.utf8"
+      $ /etc/sysconfig/i18n
+      $ locale
+
+- [CentOS7]
+
       $ localectl set-locale LANG=ja_JP.utf8
       $ localectl status
 
 12.  服务相关
 
--   1）启动停止
--   [CentOS6]
+- 1）启动停止
+- [CentOS6]
+
       $ service service_name start
       $ service service_name stop
       $ service sshd restart/status/reload
 
--   [CentOS7]
+- [CentOS7]
+
       $ systemctl start service_name
       $ systemctl stop service_name
       $ systemctl restart/status/reload sshd
 
--   自启动
--   [CentOS6]
+- 自启动
+- [CentOS6]
+
       $ chkconfig service_name on/off
 
--   [CentOS7]
+- [CentOS7]
+
       $ systemctl enable service_name
       $ systemctl disable service_name
 
--   服务一览
--   [CentOS6]
+- 服务一览
+- [CentOS6]
+
       $ chkconfig --list
 
--   [CentOS7]
+- [CentOS7]
+
       $ systemctl list-unit-files
       $ systemctl --type service
 
--   强制停止
--   [CentOS6]
+- 强制停止
+- [CentOS6]
+
       $ kill -9 <PID>
 
--   [CentOS7]
+- [CentOS7]
+
       $ systemctl kill --signal=9 sshd
 
 13.  网络
 
--   1）网络信息
--   [CentOS6]
+- 1）网络信息
+- [CentOS6]
+
       $ netstat
       $ netstat -I
       $ netstat -n
 
--   [CentOS7]
+- [CentOS7]
+
       $ ip n
       $ ip -s l
       $ ss
 
--   2）IP地址MAC地址
--   [CentOS6]
+- 2）IP地址MAC地址
+- [CentOS6]
       $ ifconfig -a
 
--   [CentOS7]
+- [CentOS7]
+
       $ ip address show
 
--   3）路由
--   [CentOS6]
+- 3）路由
+- [CentOS6]
+
       $ route -n
       $ route -A inet6 -n
 
--   [CentOS7]
+- [CentOS7]
+
       $ ip route show
       $ ip -6 route show
 
 14.  重启关闭
 
--   1）关闭
--   [CentOS6]
+- 1）关闭
+- [CentOS6]
+
       $ shutdown -h now 
 
--   [CentOS7]
+- [CentOS7]
+
       $ poweroff
       $ systemctl poweroff
 
--   2）重启
--   [CentOS6]
+- 2）重启
+- [CentOS6]
+
       $ reboot
       $ shutdown -r now
 
--   [CentOS7]
+- [CentOS7]
+
       $ reboot
       $ systemctl reboot
 
--   3）单用户模式
-      [CentOS6]
+- 3）单用户模式
+
+- [CentOS6]
+
       $ init S
 
--   [CentOS7]
+- [CentOS7]
+
       $ systemctl rescue
 
--   4）启动模式
--   [CentOS6]
--   [GUICUI]
+- 4）启动模式
+- [CentOS6]
+- [GUICUI]
+
       $ vim /etc/inittab
-        id:3:initdefault:
--   [CUIGUI]
+      id:3:initdefault:
+        
+- [CUIGUI]
+
       $ startx
 
--   [CentOS7]
--   [GUICUI]
+- [CentOS7]
+- [GUICUI]
+
       $ systemctl isolate multi-user.target
--   [CUIGUI]
+      
+- [CUIGUI]
+
       $systemctl isolate graphical.target
--   默认
+      
+- 默认
+
       $ systemctl set-default graphical.target
       $ systemctl set-default multi-user.target
--   当前
+      
+- 当前
+
       $ systemctl get-default
