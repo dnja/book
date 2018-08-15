@@ -33,30 +33,33 @@
 
 9.  时间同步
 -   [CentOS6]
-      $ ntp
-      $ ntpq -p
+
+    $ ntp
+    $ ntpq -p
 
 -   [CentOS7]
-      $ chrony
-      $ chronyc sources
+
+    $ chrony
+    $ chronyc sources
 
 10.  修改时间
 -   [CentOS6]
-      $ vim /etc/sysconfig/clock
-         ZONE="Asia/Tokyo"
-         UTC=fales
-      $ sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+    $ vim /etc/sysconfig/clock
+       ZONE="Asia/Tokyo"
+       UTC=fales
+    $ sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 [CentOS7]
-      $ timedatectl set-timezone Asia/Tokyo
-      $ timedatectl status
+    $ timedatectl set-timezone Asia/Tokyo
+    $ timedatectl status
 
 11.  修改地区
 -   [CentOS6]
-      $ vim /etc/sysconfig/i18n
-         LANG="ja_JP.utf8"
-      $ /etc/sysconfig/i18n
-      $ locale
+    $ vim /etc/sysconfig/i18n
+       LANG="ja_JP.utf8"
+    $ /etc/sysconfig/i18n
+    $ locale
 
 -   [CentOS7]
       $ localectl set-locale LANG=ja_JP.utf8
