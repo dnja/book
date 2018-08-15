@@ -7,7 +7,7 @@
 
 伴随着计算机网络和浏览器的诞生，HTTP1.0 也随之而来，处于计算机网络中的应用层，HTTP 是建立在 TCP 协议之上，所以 HTTP 协议的瓶颈及其优化技巧都是基于 TCP 协议本身的特性。
 
-https://github.com/jeanboydev/Android-ReadTheFuckingSourceCode/raw/master/resources/images/http/http_version.jpg?raw=true
+![http 版本][1]
 
 早在 HTTP 建立之初，主要就是为了将超文本标记语言(HTML)文档从 Web 服务器传送到客户端的浏览器。也是说对于前端来说，我们所写的 HTML 页面将要放在我们的 web 服务器上，用户端通过浏览器访问 url 地址来获取网页的显示内容，但是到了 WEB2.0 以来，我们的页面变得复杂，不仅仅单纯的是一些简单的文字和图片，同时我们的 HTML 页面有了 CSS，Javascript，来丰富我们的页面展示，当 ajax 的出现，我们又多了一种向服务器端获取数据的方法，这些其实都是基于 HTTP 协议的。同样到了移动互联网时代，我们页面可以跑在手机端浏览器里面，但是和 PC 相比，手机端的网络情况更加复杂，这使得我们开始了不得不对 HTTP 进行深入理解并不断优化过程中。 
 
