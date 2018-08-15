@@ -1,0 +1,60 @@
+wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
+
+1. go install/go get和 go的工具等会用到GOPATH环境变量.
+2. GOPATH是作为编译后二进制的存放目的地和import包时的搜索路径 (其实也是你的工作目录, 你可以在src下创建你自己的go源文件, 然后开始工作)。
+3. GOPATH之下主要包含三个目录: bin、pkg、src
+4. bin目录主要存放可执行文件; pkg目录存放编译好的库文件, 主要是*.a文件; src目录下主要存放go的源文件
+5. 不要把GOPATH设置成go的安装路径,
+
+
+vim ~/.bash_profile
+ # 增加go配置
+export GOROOT=/usr/local/go      # go安装路径
+export GOPATH=/home/wwwroot/go   # 程序存放路径 mac $HOME
+export PATH=$PATH:$GOROOT/bin    # go执行路径
+export PATH=$PATH:$GOPATH/bin    # go执行路径
+
+#export PATH
+
+source .bash_profile
+
+配置  vim-go.vim
+执行 :GoInstallBinaries
+
+配置 govendor
+go get github.com/kardianos/govendor
+mkdir $GOPATH/src/github.com/myusername/project
+cd $GOPATH/src/github.com/myusername/project
+govendor init
+govendor fetch github.com/gin-gonic/gin@v1.2
+curl https://raw.githubusercontent.com/gin-gonic/gin/master/examples/basic/main.go > main.go
+go run main.go
+
+
+状态 | 缩写状态 | 含义
+-- | -- | --
++local | l | 本地包，即项目自身的包组织
++external | e | 外部包，即被 $GOPATH 管理，但不在 vendor 目录下
++vendor | v | 已被 govendor 管理，即在 vendor 目录下
++std | s | 标准库中的包
++unused | u | 未使用的包，即包在 vendor 目录下，但项目并没有用到
++missing | m | 代码引用了依赖包，但该包并没有找到
++program | p | 主程序包，意味着可以编译为执行文件
++outside |   | 外部包和缺失的包
++all |   | 所有的包
+
+
+命令 | 功能
+-- | --
+init | 初始化 vendor 目录
+list | 列出所有的依赖包
+add | 添加包到 vendor 目录，如 govendor add +external 添加所有外部包
+add PKG_PATH | 添加指定的依赖包到 vendor 目录
+update | 从 $GOPATH 更新依赖包到 vendor 目录
+remove | 从 vendor 管理中删除依赖
+status | 列出所有缺失、过期和修改过的包
+fetch | 添加或更新包到本地 vendor 目录
+sync | 本地存在 vendor.json 时候拉去依赖包，匹配所记录的版本
+get | 类似 go get 目录，拉取依赖包到 vendor 目录
+
