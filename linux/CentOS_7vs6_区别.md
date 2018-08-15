@@ -1,36 +1,36 @@
- (1)桌面系统
+1.  桌面系统
 [CentOS6] GNOME 2.x
 [CentOS7] GNOME 3.x（GNOME Shell）
 
-(2)文件系统
+2.  文件系统
 [CentOS6] ext4
 [CentOS7] xfs
 
-(3)内核版本
+3.  内核版本
 [CentOS6] 2.6.x-x
 [CentOS7] 3.10.x-x
 
-(4)启动加载器
+4.  启动加载器
 [CentOS6] GRUB Legacy (+efibootmgr)
 [CentOS7] GRUB2
 
-(5)防火墙
+5.  防火墙
 [CentOS6] iptables
 [CentOS7] firewalld
 
-(6)默认数据库
+6.  默认数据库
 [CentOS6] MySQL
 [CentOS7] MariaDB
 
-(7)文件结构
+7.  文件结构
 [CentOS6] /bin, /sbin, /lib, and /lib64在/下
 [CentOS7] /bin, /sbin, /lib, and /lib64移到/usr下
 
-(8)主机名
+8.  主机名
 [CentOS6] /etc/sysconfig/network
 [CentOS7] /etc/hostname
 
-(9)时间同步
+9.  时间同步
 [CentOS6]
 $ ntp
 $ ntpq -p
@@ -39,7 +39,7 @@ $ ntpq -p
 $ chrony
 $ chronyc sources
 
-(10)修改时间
+10.  修改时间
 [CentOS6]
 $ vim /etc/sysconfig/clock
    ZONE="Asia/Tokyo"
@@ -50,7 +50,7 @@ $ sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 $ timedatectl set-timezone Asia/Tokyo
 $ timedatectl status
 
-(11)修改地区
+11.  修改地区
 [CentOS6]
 $ vim /etc/sysconfig/i18n
    LANG="ja_JP.utf8"
@@ -61,7 +61,7 @@ $ locale
 $ localectl set-locale LANG=ja_JP.utf8
 $ localectl status
 
-(12)服务相关
+12.  服务相关
 
 1）启动停止
 [CentOS6]
@@ -97,7 +97,7 @@ $ kill -9 <PID>
 [CentOS7]
 $ systemctl kill --signal=9 sshd
 
-(13)网络
+13.  网络
 
 1）网络信息
 [CentOS6]
@@ -126,7 +126,7 @@ $ route -A inet6 -n
 $ ip route show
 $ ip -6 route show
 
-(14)重启关闭
+14.  重启关闭
 
 1）关闭
 [CentOS6]
