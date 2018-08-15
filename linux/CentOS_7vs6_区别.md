@@ -1,4 +1,5 @@
 1.  桌面系统
+
 [CentOS6] GNOME 2.x
 [CentOS7] GNOME 3.x（GNOME Shell）
 
