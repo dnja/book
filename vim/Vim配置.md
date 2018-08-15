@@ -8,10 +8,10 @@
     $ make
     $ make install
 
-或则直接
+- 或则直接
     yum install -y vim*
 
-安装vundle
+- 安装vundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 
     vim ~/.vimrc.bundles
