@@ -7,7 +7,7 @@
 
 伴随着计算机网络和浏览器的诞生，HTTP1.0 也随之而来，处于计算机网络中的应用层，HTTP 是建立在 TCP 协议之上，所以 HTTP 协议的瓶颈及其优化技巧都是基于 TCP 协议本身的特性。
 
-![http TCP](https://github.com/dnja/book/blob/master/resource/images/http_version.jpg)
+![http TCP](https://github.com/dnja/book/blob/master/resource/images/network/http_version.jpg)
 
 早在 HTTP 建立之初，主要就是为了将超文本标记语言(HTML)文档从 Web 服务器传送到客户端的浏览器。也是说对于前端来说，我们所写的 HTML 页面将要放在我们的 web 服务器上，用户端通过浏览器访问 url 地址来获取网页的显示内容，但是到了 WEB2.0 以来，我们的页面变得复杂，不仅仅单纯的是一些简单的文字和图片，同时我们的 HTML 页面有了 CSS，Javascript，来丰富我们的页面展示，当 ajax 的出现，我们又多了一种向服务器端获取数据的方法，这些其实都是基于 HTTP 协议的。同样到了移动互联网时代，我们页面可以跑在手机端浏览器里面，但是和 PC 相比，手机端的网络情况更加复杂，这使得我们开始了不得不对 HTTP 进行深入理解并不断优化过程中。 
 
@@ -15,19 +15,19 @@
 
 ## HTTP 和 TCP 之间的关系
 
-![http TCP](https://github.com/dnja/book/blob/master/resource/images/http_tcp.jpg)
+![http TCP](https://github.com/dnja/book/blob/master/resource/images/network/http_tcp.jpg)
 
 简单地说，TCP 协议是 HTTP 协议的基石——HTTP 协议需要依靠 TCP 协议来传输数据。在网络分层模型中，TCP 被称为“传输层协议”，而 HTTP 被称为“应用层协议”。
 
-![http connect](https://github.com/dnja/book/blob/master/resource/images/http_connect.jpg)
+![http connect](https://github.com/dnja/book/blob/master/resource/images/network/http_connect.jpg)
 
 HTTP 对 TCP 连接的使用，分为两种方式：俗称“短连接”和“长连接”（“长连接(Keep-Alive)”又称“持久连接(Persistent Connection)”）。
 
-![http simple](https://github.com/dnja/book/blob/master/resource/images/http_connect_simple.jpg)
+![http simple](https://github.com/dnja/book/blob/master/resource/images/network/http_connect_simple.jpg)
 
 假设有一个网页，里面包含好多图片，还包含好多【外部的】 CSS 文件和 JS 文件。在“短连接”的模式下，浏览器会先发起一个 TCP 连接，拿到该网页的 HTML 源代码（拿到 HTML 之后，这个 TCP 连接就关闭了）。然后，浏览器开始分析这个网页的源码，知道这个页面包含很多外部资源（图片、CSS、JS）。然后针对【每一个】外部资源，再分别发起一个个 TCP 连接，把这些文件获取到本地（同样的，每抓取一个外部资源后，相应的 TCP 就断开）
 
-![http keep](https://github.com/dnja/book/blob/master/resource/images/http_connect_keep.jpg)
+![http keep](https://github.com/dnja/book/blob/master/resource/images/network/http_connect_keep.jpg)
 
 相反，如果是“长连接”的方式，浏览器也会先发起一个 TCP 连接去抓取页面。但是抓取页面之后，该 TCP 连接并不会立即关闭，而是暂时先保持着（所谓的“Keep-Alive”）。然后浏览器分析 HTML 源码之后，发现有很多外部资源，就用刚才那个 TCP 连接去抓取此页面的外部资源。
 
@@ -105,13 +105,13 @@ TLS 1.0通常被标示为SSL 3.1，TLS 1.1为SSL 3.2，TLS 1.2为SSL 3.3。
 
 所谓的 HTTPS 其实是“HTTP over SSL”或“HTTP over TLS”，它是 HTTP 与 SSL/TSL 的结合使用而已。
 
-![http https](https://github.com/dnja/book/blob/master/resource/images/http_https.jpg)
+![http https](https://github.com/dnja/book/blob/master/resource/images/network/http_https.jpg)
 
 ## “对称加密”与“非对称加密”
 
 - 明文传输消息
 
-![pass_none](https://github.com/dnja/book/blob/master/resource/images/pass_none.jpg)
+![pass_none](https://github.com/dnja/book/blob/master/resource/images/network/pass_none.jpg)
 
 - “加密”和“解密”
 
@@ -120,7 +120,7 @@ TLS 1.0通常被标示为SSL 3.1，TLS 1.1为SSL 3.2，TLS 1.2为SSL 3.3。
 
 - “对称加密”
 
-![pass_key](https://github.com/dnja/book/blob/master/resource/images/pass_key.jpg)
+![pass_key](https://github.com/dnja/book/blob/master/resource/images/network/pass_key.jpg)
 
 所谓的“对称加密技术”，意思就是说：“加密”和“解密”使用【相同的】密钥。这个比较好理解。就好比你用 7zip 或 WinRAR 创建一个带密码（口令）的加密压缩包。当你下次要把这个压缩文件解开的时候，你需要输入【同样的】密码。在这个例子中，密码/口令就如同刚才说的“密钥”。
 
@@ -129,13 +129,13 @@ TLS 1.0通常被标示为SSL 3.1，TLS 1.1为SSL 3.2，TLS 1.2为SSL 3.3。
 
 - “非对称加密”
 
-![pass_pub_pre_key](https://github.com/dnja/book/blob/master/resource/images/pass_pub_pre_key.jpg)
+![pass_pub_pre_key](https://github.com/dnja/book/blob/master/resource/images/network/pass_pub_pre_key.jpg)
 
 所谓的“非对称加密技术”，意思就是说：“加密”和“解密”使用【不同的】密钥。当年“非对称加密”的发明，还被誉为“密码学”历史上的一次革命。
 
 被劫持情况：
 
-![pass_pub_hacker](https://github.com/dnja/book/blob/master/resource/images/pass_pub_hacker.jpg)
+![pass_pub_hacker](https://github.com/dnja/book/blob/master/resource/images/network/pass_pub_hacker.jpg)
 
 窃听者可以伪造服务器的公钥与客户端通讯，客户端以为是跟服务器通讯，其实是与窃听者在通讯，后果可想而知。
 
@@ -148,7 +148,7 @@ CA 的初始是为了解决上面非对称加密被劫持的情况，服务器�
 
 HTTPS 中 CA 证书的获取
 
-![https_ca](https://github.com/dnja/book/blob/master/resource/images/https_ca.jpg)
+![https_ca](https://github.com/dnja/book/blob/master/resource/images/network/https_ca.jpg)
 
 注：上图步骤 2 之后，客户端获取到“CA 证书”会进行本地验证，即使用本地系统或者浏览器中的公钥进行解密，每个“CA 证书”都会有一个证书编号可用于解密后进行比对（具体验证算法请查阅相关资料）。
 
@@ -160,7 +160,7 @@ HTTPS 中 CA 证书的获取
 
 [SPDY- The Chromium Projects](http://www.chromium.org/spdy/)
 
-![http_spdy](https://github.com/dnja/book/blob/master/resource/images/http_spdy.jpg)
+![http_spdy](https://github.com/dnja/book/blob/master/resource/images/network/http_spdy.jpg)
 
 SPDY位于HTTP之下，TCP和SSL之上，这样可以轻松兼容老版本的HTTP协议(将HTTP1.x的内容封装成一种新的frame格式)，同时可以使用已有的SSL功能。
 
