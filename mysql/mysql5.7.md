@@ -1,4 +1,4 @@
-## mysql5.7
+## mysql5.7安装
 ***
     wget http://repo.mysql.com/mysql57-community-release-el7-8.noarch.rpm
     rpm -ivh mysql57-community-release-el7-8.noarch.rpm
