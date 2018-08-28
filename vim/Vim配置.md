@@ -2,14 +2,16 @@
 - :version 查看版本，必须是vim8
 - 如果是vim7，需要重新安装
 - 安装vim
-    $ git clone https://github.com/vim/vim.git
-    $ cd vim/src
-    $ ./configure --enable-pythoninterp=yes
-    $ make
-    $ make install
+
+        $ git clone https://github.com/vim/vim.git
+        $ cd vim/src
+        $ ./configure --enable-pythoninterp=yes
+        $ make
+        $ make install
 
 - 或则直接
-    yum install -y vim*
+
+        yum install -y vim*
 
 ## 安装vundle
 
