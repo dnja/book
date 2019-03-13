@@ -25,17 +25,28 @@
 
     " Define bundles via Github repos "
     Bundle 'majutsushi/tagbar'
-    Bundle 'kien/ctrlp.vim'
+    Bundle 'ctrlpvim/ctrlp.vim'
+    " 语法检查
     Bundle 'scrooloose/syntastic'
+    " Git包装器
     Bundle 'tpope/vim-fugitive'
+    " 括号，括号，引号
     Bundle 'tpope/vim-surround'
+    " 通用注释
     Bundle 'vim-scripts/tComment'
+    " 左侧目录
     Bundle 'scrooloose/nerdtree'
-    Bundle 'Lokaltog/vim-powerline'
+    " 状态行插件
+    Bundle 'powerline/powerline'
+    " 文本过滤和对齐
     Bundle 'godlygeek/tabular'
-    Bundle 'msanders/snipmate.vim'
+    " 文本片段
+    Bundle 'garbas/vim-snipmate'
+    " 颜色插件
     Bundle 'altercation/vim-colors-solarized'
+    " 一个键直接跳转到目标
     Bundle 'Lokaltog/vim-easymotion'
+    " go插件
     Bundle 'fatih/vim-go'
 
     vim ~/.vimrc
