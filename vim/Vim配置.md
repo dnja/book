@@ -24,7 +24,9 @@
     call vundle#rc()
 
     " Define bundles via Github repos "
+    " 左侧功能目录
     Bundle 'majutsushi/tagbar'
+    " 完整路径模糊文件，缓冲区，mru，tag，...查找
     Bundle 'ctrlpvim/ctrlp.vim'
     " 语法检查
     Bundle 'scrooloose/syntastic'
