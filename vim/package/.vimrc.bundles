@@ -1,18 +1,29 @@
 filetype off
-    set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Define bundles via Github repos "
+" 左侧功能目录
 Bundle 'majutsushi/tagbar'
-Bundle 'kien/ctrlp.vim'
+" 完整路径模糊文件，缓冲区，mru，tag，...查找
+Bundle 'ctrlpvim/ctrlp.vim'
+" 语法检查
 Bundle 'scrooloose/syntastic'
+" Git包装器
 Bundle 'tpope/vim-fugitive'
+" 括号，括号，引号
 Bundle 'tpope/vim-surround'
+" 通用注释
 Bundle 'vim-scripts/tComment'
+" 左侧目录
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
+" 状态行插件
+Bundle 'powerline/powerline'
+" 文本过滤和对齐
 Bundle 'godlygeek/tabular'
-Bundle 'msanders/snipmate.vim'
+" 颜色插件
 Bundle 'altercation/vim-colors-solarized'
+" 一个键直接跳转到目标
 Bundle 'Lokaltog/vim-easymotion'
+" go插件
 Bundle 'fatih/vim-go'
