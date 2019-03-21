@@ -39,7 +39,9 @@
     " 左侧目录
     Bundle 'scrooloose/nerdtree'
     " 状态行插件
-    Bundle 'powerline/powerline'
+    " Bundle 'Lokaltog/vim-powerline' 过期
+    " Bundle 'powerline/powerline' 安装不成功
+    Bundle 'vim-airline/vim-airline'
     " 文本过滤和对齐
     Bundle 'godlygeek/tabular'
     " 文本片段
