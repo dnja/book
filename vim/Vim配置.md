@@ -62,7 +62,7 @@
 - 打开 vim，输入 :BundleInstall
 
 - vim的配置方案可以自定义，也可以直接使用我的配置方案：
-- https://github.com/dnja/vim/blob/master/.vimrc
+- https://github.com/dnja/book/blob/master/vim/package/.vimrc
 
 ## mac 终端方案：
 
