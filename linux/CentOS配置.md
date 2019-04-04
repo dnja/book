@@ -12,6 +12,18 @@
     yum -y install php-devel php-fpm
     yum -y install php-mysql php-gd php-mbstring php-mcrypt
     yum -y install php-pecl-oauth
+    
+    以下是CentOS 7.0的源。
+
+    # yum install epel-release
+    # rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+    使用yum list命令查看可安装的包(Packege)。
+    
+    # yum list --enablerepo=remi --enablerepo=remi-php56 | grep php
+    
+    yum源配置好了，下一步就安装PHP5.6。
+
+    # yum install --enablerepo=remi --enablerepo=remi-php56 php php-opcache php-devel
 
 ## 启动MYSQL与Httpd服务
     service nginx restart
