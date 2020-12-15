@@ -10,9 +10,9 @@ Git 的设置文件为 .gitconfig，它可以在用户主目录下（全局配�
 > $ git config -e [--global] //--global 表示设置全局配置，不加该参数只对当前仓库生效
 
 - 设置提交代码时的用户信息
-> $ git config [--global] user.name "[name]"
+> $ git config --global user.name "xxx"
 > 
-> $ git config [--global] user.email "[email address]"
+> $ git config --global user.email "xxx@gmail.com"
 
 - 创建 SSH key
 > $ ssh-keygen -t rsa -C "email@example.com"
