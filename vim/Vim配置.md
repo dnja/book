@@ -5,7 +5,7 @@
 
         $ git clone https://github.com/vim/vim.git
         $ cd vim/src
-        $ ./configure --enable-pythoninterp=yes
+        $ ./configure --prefix=/usr/local/vim8/ --enable-pythoninterp=yes --with-python-config-dir=/usr/lib64/python2.7/config
         $ make
         $ make install
 
